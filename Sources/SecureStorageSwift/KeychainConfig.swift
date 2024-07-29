@@ -7,9 +7,9 @@
 import Foundation
 
 public struct KeychainConfig {
-    var accessGroup: String?
-    var serviceName: String?
-    var synchronizable: Bool?
-    var accessibility: KeychainAccessibility
-    var returnData: Bool? = nil
+    public var accessGroup: String?
+    public var serviceName: String?
+    public var synchronizable: Bool?
+    public var accessibility: KeychainAccessibility
+    public var returnData: Bool? = nil
 }

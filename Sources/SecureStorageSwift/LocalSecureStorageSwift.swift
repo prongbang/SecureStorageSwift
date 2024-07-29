@@ -18,7 +18,7 @@ public class LocalSecureStorageSwift : SecureStorageSwift {
         self.config = KeychainConfig(
             accessGroup: "com.inteniquetic.kSecKey",
             serviceName: "SecStoreService",
-            synchronizable: true,
+            synchronizable: false,
             accessibility: .unlocked
         )
         self.keychainManager = LocalKeychainManager()
