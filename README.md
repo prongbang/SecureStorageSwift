@@ -27,8 +27,53 @@ let package = Package(
 ```swift
 import SecureStorageSwift
 
-let keyConfig = KeyConfig(name: "com.prongbang.signx.kSecAccKey")
-let signatureBiometricManager = LocalSignatureBiometricManager.newInstance(
-    keyConfig: keyConfig
+let config = KeychainConfig(
+    accessGroup: "com.inteniquetic.kSecKey",
+    serviceName: "SecStoreService",
+    synchronizable: true,
+    accessibility: .unlocked
 )
+let keychainManager = LocalKeychainManager()
+let secureStorage = LocalSecureStorageSwift(config: config, keychainManager: keychainManager)
+```
+
+### Contains Key
+
+```swift
+let exist = secureStorage.containsKey(key: "key")
+```
+
+
+### Read
+
+```swift
+let value = secureStorage.read(key: "key")
+```
+
+
+### Read All
+
+```swift
+let results = secureStorage.readAll()
+```
+
+
+### Delete
+
+```swift
+let result = secureStorage.delete(key: "key")
+```
+
+
+### Delete All
+
+```swift
+let result = secureStorage.deleteAll()
+```
+
+
+### Read
+
+```swift
+let result = secureStorage.write(key: "key")
 ```
