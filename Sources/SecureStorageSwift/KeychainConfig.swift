@@ -12,4 +12,18 @@ public struct KeychainConfig {
     public var synchronizable: Bool?
     public var accessibility: KeychainAccessibility
     public var returnData: Bool? = nil
+    
+    public init(
+        accessGroup: String?,
+        serviceName: String?,
+        synchronizable: Bool?,
+        accessibility: KeychainAccessibility,
+        returnData: Bool?
+    ) {
+        self.accessGroup = accessGroup
+        self.serviceName = serviceName
+        self.synchronizable = synchronizable
+        self.accessibility = accessibility
+        self.returnData = returnData
+    }
 }

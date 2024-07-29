@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'SecureStorageSwift'
-    s.version          = '1.0.1'
+    s.version          = '1.0.2'
     s.summary          = 'Secure Storage Swift provides an API to securely store sensitive data.'
     s.homepage         = 'https://github.com/prongbang/SecureStorageSwift'
     s.license          = 'MIT'

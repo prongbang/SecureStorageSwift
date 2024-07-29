@@ -15,7 +15,7 @@ In your `Package.swift` file, add `SecureStorageSwift` dependency to correspondi
 ```swift
 let package = Package(
   dependencies: [
-    .package(url: "https://github.com/prongbang/SecureStorageSwift.git", from: "1.0.1"),
+    .package(url: "https://github.com/prongbang/SecureStorageSwift.git", from: "1.0.2"),
   ],
 )
 ```
