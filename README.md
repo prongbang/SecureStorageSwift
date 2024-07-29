@@ -28,10 +28,11 @@ let package = Package(
 import SecureStorageSwift
 
 let config = KeychainConfig(
-    accessGroup: "com.inteniquetic.kSecKey",
-    serviceName: "SecStoreService",
-    synchronizable: true,
-    accessibility: .unlocked
+    accessGroup: nil,
+    serviceName: "SecureStorage",
+    synchronizable: false,
+    accessibility: .unlocked,
+    returnData: nil
 )
 let keychainManager = LocalKeychainManager()
 let secureStorage = LocalSecureStorageSwift(config: config, keychainManager: keychainManager)
