@@ -13,5 +13,5 @@ public protocol SecureStorageSwift {
     func readAll() -> [String: String]?
     func delete(key: String) -> Bool
     func deleteAll() -> Bool
-    func write(key: String, value: String, accessibility: KeychainAccessibility) -> Bool
+    func write(key: String, value: String) -> Bool
 }

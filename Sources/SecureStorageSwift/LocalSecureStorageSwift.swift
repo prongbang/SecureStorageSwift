@@ -19,7 +19,8 @@ public class LocalSecureStorageSwift : SecureStorageSwift {
             accessGroup: "com.inteniquetic.kSecKey",
             serviceName: "SecStoreService",
             synchronizable: false,
-            accessibility: .unlocked
+            accessibility: .unlocked,
+            returnData: nil
         )
         self.keychainManager = LocalKeychainManager()
     }
@@ -132,7 +133,7 @@ public class LocalSecureStorageSwift : SecureStorageSwift {
         return status == noErr
     }
     
-    public func write(key: String, value: String, accessibility: KeychainAccessibility = KeychainAccessibility.unlocked) -> Bool {
+    public func write(key: String, value: String) -> Bool {
         var query = keychainManager.query(key: key, config: KeychainConfig(
             accessGroup: config.accessGroup,
             serviceName: config.serviceName,
@@ -145,7 +146,7 @@ public class LocalSecureStorageSwift : SecureStorageSwift {
         if (keyExists) {
             let update: [CFString: Any?] = [
                 kSecValueData: value.data(using: String.Encoding.utf8),
-                kSecAttrAccessible: accessibility.toSecAttr(),
+                kSecAttrAccessible: config.accessibility.toSecAttr(),
                 kSecAttrSynchronizable: config.synchronizable
             ]
             let status = SecItemUpdate(query as CFDictionary, update as CFDictionary)
